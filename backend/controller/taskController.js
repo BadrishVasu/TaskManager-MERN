@@ -4,7 +4,7 @@ import { getTasks, addTask, getTaskById, updateTaskById, deleteTaskById } from '
 export const taskController = new express.Router();
 
 taskController.get("/", getTasks);
-taskController.get("/:id", getTaskById);
 taskController.post("/", addTask);
+taskController.get("/:id", getTaskById);
 taskController.put("/:id", updateTaskById);
 taskController.delete("/:id", deleteTaskById);

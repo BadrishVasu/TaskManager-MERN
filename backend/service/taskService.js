@@ -46,8 +46,8 @@ export const getTaskById = async (req, res) => {
     try {
 
         const taskId = req.params.id;
-        const allTasks = await getTaskByIdRepo(taskId);
-        return res.status(200).json(allTasks);
+        const task = await getTaskByIdRepo(taskId);
+        return res.status(200).json(task);
 
     } catch (err) {
 

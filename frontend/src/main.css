@@ -1,54 +1,40 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*Importing Inter font from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-sans-serif: 'Inter', sans-serif;
+    --color-flowhite: #fffaf0;
+    --color-turboblue: #007990;
+    --color-turboblue-darker: #006477;
 }
 
-body {
-    height: 100vh;
-}
+@layer components {
+    .turbo-borders {
+        @apply border border-gray-400 rounded-md;
+    }
 
-.home {
-    display: flex;
-    flex-direction: column;
-}
+    .h1 {
+        @apply text-4xl font-bold;
+    }
 
-.navbar {
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    background-color: purple;
-    height: 5vh;
-    width: 100%;
-    font: bold 14px "Roboto", sans-serif;
-    color: white;
-}
+    .h3 {
+        @apply text-xl font-bold;
+    }
 
-.main-containers {
-    display: flex;
-    padding: 10px;
-    gap: 10px;
-    height: 95vh;
-}
+    .btn {
+        @apply bg-turboblue rounded-md text-flowhite hover:bg-turboblue-darker hover:cursor-pointer;
+    }
 
-.sidebar {
-    border: 1px solid gray;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 20%;
-}
+    .body-cell-padding {
+        @apply p-4;
+    }
 
-.view {
-    border: 1px solid gray;
-    border-radius: 5px;
-    width: 80%;
-}
+    .head-cell-padding {
+        @apply pb-4 px-4;
+    }
 
-th, td {
-    border: 1px solid gray;
-    border-radius: 5px;
-    padding: 10px;
+    .media-home {
+        @apply max-lg:flex-col max-lg:items-center;
+    }
 }

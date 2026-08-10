@@ -1,7 +1,13 @@
 import { taskModel } from "../model/task.js";
 
 export const getTasksRepo = () => {
-    return taskModel.find();
+    return taskModel.aggregate(
+        [
+            {
+                $sort : { uploadDate: -1 }
+            }
+        ]
+    );
 }
 
 export const getTaskByIdRepo = (taskId) => {
