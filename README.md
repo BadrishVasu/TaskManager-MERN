@@ -1,1 +1,1 @@
-TurboModus Task Management System made using Node.js, Express.js, React.js and MongoDB
+A Task manager made using Node.js, Express.js, React.js and MongoDB
