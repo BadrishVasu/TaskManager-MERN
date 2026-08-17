@@ -7,6 +7,21 @@
     --color-flowhite: #fffaf0;
     --color-turboblue: #007990;
     --color-turboblue-darker: #006477;
+    --color-solblue1: #073642;
+}
+
+@layer base {
+    body {
+        @apply text-solblue1;
+    }
+
+    h1 {
+        @apply text-4xl font-bold;
+    }
+
+    h3 {
+        @apply text-xl font-bold;
+    }
 }
 
 @layer components {
@@ -14,24 +29,16 @@
         @apply border border-gray-400 rounded-md;
     }
 
-    .h1 {
-        @apply text-4xl font-bold;
-    }
-
-    .h3 {
-        @apply text-xl font-bold;
-    }
-
     .btn {
         @apply bg-turboblue rounded-md text-flowhite hover:bg-turboblue-darker hover:cursor-pointer;
     }
 
     .body-cell-padding {
-        @apply p-4;
+        @apply px-4 py-1;
     }
 
     .head-cell-padding {
-        @apply pb-4 px-4;
+        @apply px-4 pb-1;
     }
 
     .media-home {

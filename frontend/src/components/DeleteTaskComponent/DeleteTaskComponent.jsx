@@ -22,7 +22,7 @@ const DeleteTaskComponent = ({ taskId, taskTitle, setModalSwitch, setModalData }
 
         return (
             <>
-                <h3 className='h1'>Delete Task</h3>
+                <h1 className='h1'>Delete Task.</h1>
                 <p>Are you sure you want to delete the  task: "{taskTitle}"?</p>
                 <div className='m-4 self-center'>
                     <button className='btn px-4 py-1 hover:bg-turboblue-darker hover:cursor-pointer shadow-md/25'

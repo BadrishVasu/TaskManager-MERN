@@ -26,17 +26,17 @@ const TaskContent = () => {
             <Modal modalSwitch={modalSwitch} setModalSwitch={setModalSwitch} modalData={modalData} setModalData={setModalData} />
 
             {/* Table of Tasks */}
-            <div className='turbo-borders px-5 py-3 min-h-150 bg-flowhite/25 backdrop-blur-sm shadow-md/20 flex flex-col gap-5 overflow-auto'>
+            <div className='turbo-borders px-5 py-3 min-h-150 bg-flowhite/25 backdrop-blur-sm shadow-md/20 flex flex-col grow gap-5 overflow-auto'>
                 <h1 className="h1">Tasks.</h1>
                 <table className='table-auto'>
                     <thead>
                         <tr className='border-b border-gray-400'>
-                            <th className='head-cell-padding text-left h3'>S.No.</th>
-                            <th className='head-cell-padding text-left h3'>Title</th>
-                            <th className='head-cell-padding text-left h3'>Short Description</th>
-                            <th className='head-cell-padding text-left h3'>Status</th>
-                            <th className='head-cell-padding text-left h3'>Upload Date</th>
-                            <th className='head-cell-padding text-left h3'>Actions</th>
+                            <th className='head-cell-padding text-left'>S.No.</th>
+                            <th className='head-cell-padding text-left'>Title</th>
+                            <th className='head-cell-padding text-left'>Short Description</th>
+                            <th className='head-cell-padding text-left'>Status</th>
+                            <th className='head-cell-padding text-left'>Upload Date</th>
+                            <th className='head-cell-padding text-left'>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
