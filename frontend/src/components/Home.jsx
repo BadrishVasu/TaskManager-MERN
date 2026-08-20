@@ -1,5 +1,5 @@
-import Sidebar from '../Sidebar/Sidebar.jsx';
-import TaskContent from '../TaskContent/TaskContent.jsx';
+import Sidebar from './Sidebar.jsx';
+import TaskContent from './TaskContent.jsx';
 
 const Home = () => {
 

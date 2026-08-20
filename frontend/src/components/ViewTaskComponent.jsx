@@ -1,5 +1,5 @@
-import UpdateTaskComponent from "../UpdateTaskComponent/UpdateTaskComponent.jsx";
-import DeleteTaskComponent from "../DeleteTaskComponent/DeleteTaskComponent.jsx";
+import UpdateTaskComponent from "./UpdateTaskComponent.jsx";
+import DeleteTaskComponent from "./DeleteTaskComponent.jsx";
 
 const ViewTaskComponent = ({ taskObject, setModalSwitch, setModalData }) => {
 
