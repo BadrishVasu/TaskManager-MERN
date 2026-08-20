@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from "react";
+import { io } from "https://cdn.socket.io/4.8.3/socket.io.esm.min.js";
 
+import Modal from "../Modal/Modal.jsx";
 import UpdateTaskComponent from "../UpdateTaskComponent/UpdateTaskComponent.jsx";
 import DeleteTaskComponent from "../DeleteTaskComponent/DeleteTaskComponent.jsx";
-import Modal from "../Modal/Modal.jsx";
 import ViewTaskComponent from "../ViewTaskComponent/ViewTaskComponent.jsx";
 
 const TaskContent = () => {
     // To get task data from backend
+    const socket = io("http://localhost:4444")
     const [tasks, setTasks] = useState([]);
     const [modalSwitch, setModalSwitch] = useState(false);
     const [modalData, setModalData] = useState(null);
@@ -18,7 +20,7 @@ const TaskContent = () => {
             setTasks(response.data.data);
         };
         fetchTasks().catch((error) => console.log(error));
-        }, [tasks]
+        }, []
     );
 
     return (

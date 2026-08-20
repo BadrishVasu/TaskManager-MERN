@@ -1,28 +1,30 @@
 import express from 'express';
 import cors from 'cors';
-import { port, mongoDbUrl, corsOptions } from './config/config.js';
-import { taskController } from './controller/taskController.js';
-import { testController } from './controller/testController.js';
 import mongoose from 'mongoose';
+import { Server } from 'socket.io';
+import { createServer } from 'http';
+
+import { port, mongoDbUrl, corsOptions } from './config.js';
+import { taskController } from './controller/taskController.js';
 
 const app = express();
+const server = createServer(app);
+const io = new Server(server, { cors: corsOptions });
 
 app.use(express.json());
 app.use(cors(corsOptions));
-app.use("/", testController);
 app.use("/api/tasks", taskController);
 
-mongoose
-    .connect(mongoDbUrl)
-    .then(() => {
-        console.log(`App connected to database: ${mongoDbUrl}`);
-        app.listen(
-            port,
-            () => {
-                console.log(`App is listening to port: ${port}`);
-            }
-        );
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+const startServer = async () => {
+    try {
+        await mongoose.connect(mongoDbUrl);
+        await console.log(`App connected to database: ${mongoDbUrl}`);
+        await io.on('connection', (socket) => console.log("A user connected"));
+        await server.listen(port, () => console.log(`Server is running at port: ${port}`));
+    }
+    catch (error) {
+        console.log(error);
+    }
+}
+
+startServer();
