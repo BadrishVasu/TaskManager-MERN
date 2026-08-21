@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from "react";
-import { socket } from '.../socket.js';
+import { socket } from '../socket.js';
 
-import Modal from "./Modal/Modal.jsx";
+import Modal from "./Modal.jsx";
 import UpdateTaskComponent from "./UpdateTaskComponent/UpdateTaskComponent.jsx";
 import DeleteTaskComponent from "./DeleteTaskComponent/DeleteTaskComponent.jsx";
 import ViewTaskComponent from "./ViewTaskComponent/ViewTaskComponent.jsx";
